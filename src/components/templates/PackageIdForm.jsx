@@ -1,16 +1,21 @@
-import React from 'react';
-import { useForm } from 'react-hook-form';
+import React, {useState} from 'react';
+import { Link } from 'react-router-dom';
 
 export default function PackageIdForm () {
-    const {register, handleSubmit} = useForm();
-    const onSubmit = packageNr => console.log(packageNr);
+    const [id, setId] = useState("empty");
+    
     return(
         <div className="name-form">
-            <form className = "form" onSubmit={handleSubmit(onSubmit)}>
-                <label className = "label">Parcel number:</label>
-                <input ref = {register} name="parcelNumber"/>
-                <button className = "submit-button">Track package</button>
-            </form>
+            <label className = "label">
+            Enter the package number here:
+            </label>
+                <input placeholder = "12345678"
+                    value = {id}
+                    onChange = {(event) => setId(event.target.value)}
+                />
+                <Link className = "option-button" to = {"/package/" + id}>
+                    Track the package
+                </Link>
         </div>
     );
 }
