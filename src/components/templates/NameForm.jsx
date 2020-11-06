@@ -11,7 +11,9 @@ export default function NameForm () {
             value = {query}
             onChange = {(event) => setQuery(event.target.value)}
             />
-            <Link className = "option-button" to = {"/mypackages/"+query}>Go to my packages</Link>
+            <Link className = "option-button" to = {"/mypackages/"+query}>
+                Go to my packages
+            </Link>
         </div>
     );
 }
