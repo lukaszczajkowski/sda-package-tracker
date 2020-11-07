@@ -1,0 +1,15 @@
+.option-button {
+    padding-left: 5px;
+    height: 20px;
+    width: auto;
+    background-color: #AFD275;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.option-button:hover {
+    background-color: white;
+    color: #AFD275;
+}
