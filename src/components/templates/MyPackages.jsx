@@ -78,7 +78,10 @@ export default function MyPackages({match, data}) {
             </button>
             </section>
             <section className = "display-cards">
-                {cards}
+                {cards.length === 0 ?
+                <p>No packages found</p>
+                :
+                cards}
             </section>
         
         </div>

@@ -1,4 +1,11 @@
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import {
+  RecoilRoot,
+  atom,
+  selector,
+  useRecoilState,
+  useRecoilValue,
+} from 'recoil';
 
 import './css/styles.css';
 import Card from './components/molecules/Card';
@@ -13,6 +20,7 @@ import data from './orders.json';
 
 function App() {
   return (
+    <RecoilRoot>
     <div className= "App">
     <Router>
         <Header />
@@ -52,7 +60,7 @@ function App() {
         </Switch>
         </Router>
       </div>
-    
+      </RecoilRoot>
   );
 }
 
