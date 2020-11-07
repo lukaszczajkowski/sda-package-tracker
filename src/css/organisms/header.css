@@ -1,35 +1,9 @@
 .header {
+    padding: 12px 16px;
     display: grid;
-    grid-template-columns: 0.2fr 1fr;
-    height: 30px;
-    width: auto;
-    margin: 0;
-    padding: 0;
-    background-color: #E7717D;
-    text-align: center;
+    grid-template-columns: 0.5fr 1fr;
+    background-color: #272727;
+    color: #ffe400;
+    font-size: 30px;
     align-items: center;
-    grid-auto-columns: max-content;
-}
-
-.home-button {
-    padding-left: 5px;
-    height: 20px;
-    width: auto;
-    background-color: #AFD275;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    display: inline-block;
-}
-
-.header .right {
-    display: inline-block;
-    margin: 0px;
-    font-size: 15px;
-    color: white;
-}
-
-.home-button:hover {
-    background-color: white;
-    color: #AFD275;
 }

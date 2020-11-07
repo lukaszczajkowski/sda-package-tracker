@@ -1,0 +1,6 @@
+.package-page{
+    background-color: #747474;
+    display: flex;
+    grid-template-columns: 1fr;
+    justify-content: center;
+}

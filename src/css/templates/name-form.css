@@ -1,0 +1,18 @@
+.name-form {
+    margin-top: 10px;
+}
+
+.name-form .input {
+    margin-bottom: 10px;
+}
+
+.input-field {
+    min-width: 250px;
+    min-height: 20px;
+    box-shadow: inset;
+    text-align: center;
+}
+
+.errors {
+   color: #ff652f; 
+}

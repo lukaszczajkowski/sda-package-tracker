@@ -49,34 +49,38 @@ export default function MyPackages({match, data}) {
         
     return(
         <div className = "my-packages">
-            <h2>Filter results by:</h2>
-            <section className = "button-section"></section>
-            <button onClick = {
+            <h2 className = "filter-message">Filter results by:</h2>
+            <section className = "button-section">
+            <button className = "buttons" onClick = {
                 () => setCards(renderCards("delivered", results))
             }>
                 Delivered
             </button>
-            <button onClick = {
+            <button className = "buttons"  onClick = {
                 () => setCards(renderCards("on-the-way", results))
             }>
                 Underway
             </button>
-            <button onClick = {
+            <button className = "buttons" onClick = {
                 () => setCards(renderCards("ready-for-pickup", results))
             }>
                 Ready for pickup
             </button>
-            <button onClick = {
+            <button className = "buttons"  onClick = {
                 () => setCards(renderCards("order-info-received", results))
             }>
                 Order received
             </button>
-            <button onClick = {
+            <button className = "buttons"  onClick = {
                 () => setCards(renderCards("choice", results))
             }>
                 Show all
             </button>
-            {cards}
+            </section>
+            <section className = "display-cards">
+                {cards}
+            </section>
+        
         </div>
     );
 }

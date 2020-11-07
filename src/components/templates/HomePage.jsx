@@ -8,17 +8,20 @@ import PackageIdForm from './PackageIdForm';
 export default function HomePage() {
 
     return (
-        <div className="home-page">
-            <div className="welcome">
-                <p>Welcome to your post tracker!</p>
+        <div className = "home-page">
+            <div>
+                <h2 className = "welcome">Welcome to your <br/> Post Tracker!</h2>
             </div>
-            <div className="row">
-                <p>Enter your first and last name</p>
-                <p>to view your packages</p>
+            <div className = "content">
+                Enter your first and last name
+                to view your packages
+            </div>
+            <div className = "form">
                 <NameForm/>
             </div>
-            <div className="row">
-            <p>Know your package ID?</p>
+            
+            <div className="content">
+            <h2 className = "welcome">Know your package ID?</h2>
             <p>Enter it here to check its status!</p>
                 <PackageIdForm/>
             </div>

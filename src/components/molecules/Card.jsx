@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Card({data}) {
+export default function Card({ data }) {
 
     const {
         id,
@@ -29,16 +29,51 @@ export default function Card({data}) {
 
         return dayTrimmed + ' at ' + hourTrimmed;
     }
-    const dateArray = JSON.stringify(eta).split('T')
+    const dateArray = JSON.stringify(eta).split('T');
     const date = transformDate(dateArray);
+
+    const lastUpdatedArray = JSON.stringify(eta).split('T');
+    const lastUpdated = transformDate(lastUpdatedArray);
     return (
-        <article className = "card">
-            <p>Package id:</p>
-            {id}
-            <p>User name:</p>
-            {user_name}
-            <p>Estimated time of arrival:</p>
-            {date}
+        <article className="card">
+            <span>Package id: </span>
+            <span className="data">{parcel_id}</span>
+            <br />
+            <hr />
+            <span>User name: </span>
+            <span className="data">{user_name}</span>
+            <br />
+            <hr />
+            <span>Estimated time of arrival:</span>
+            <br />
+            <span className="data">{date}</span>
+            <br />
+            <hr />
+            <span>Sender: </span>
+            <span className="data">{sender}</span>
+            <br />
+            <hr />
+            <span>Verification: </span>
+            <span className="data">
+                {JSON.stringify(verification_required) == "true" ?
+                    "required"
+                    :
+                    "not required"}
+            </span>
+            <br />
+            <hr />
+            <span>Location: </span>
+            <br/>
+            <span className="data">{location_name}</span>
+            <br/>
+            <span className = "data">
+                {location_coordinate_latitude}, {location_coordinate_longitude}
+            </span>
+            <br/>
+            <hr/>
+            <span>Notes: </span>
+            <br/>
+            <span className="data">{notes}</span>
         </article>
     );
 }

@@ -1,19 +1,53 @@
 import React, {useState} from 'react';
-import { Link } from 'react-router-dom'; 
-// import { Formik, Form, Field, ErrorMessage} from 'formik';
+import { Link } from 'react-router-dom';
+import { useFormik } from 'formik'; 
 
 export default function NameForm () {
-    const [query, setQuery] = useState("");
+    function validate(values) {
+        let errors = {};
+        if (!values.query) {
+          errors.query = 'Field required';
+        } 
+        return errors;
+     
+    }
+
+    const formik = useFormik({
+        initialValues: {
+            query: '',
+        },
+        validate, 
+        onChange: values => {
+            alert(JSON.stringify(values, null, 2));
+        },
+        
+    });
 
     return(
         <div className="name-form">
-            <input placeholder = "John Smith"
-            value = {query}
-            onChange = {(event) => setQuery(event.target.value)}
+            <div className = "input">
+            <input onChange = {formik.handleChange}
+            placeholder = 'John Smith'
+            name = "query"
+            type = "text"
+            value = {formik.values.query}
+            className = "input-field"
             />
-            <Link className = "option-button" to = {"/mypackages/"+query}>
+            </div>
+            {formik.errors.query ? 
+                <div className = "errors">
+                    {formik.errors.query}
+                </div>
+            : null}
+            <div className = "sumbition">
+            {formik.values.query === ''?
+             <button className = "buttons">Go to my packages</button>
+             :
+            <Link className = "buttons" to = {"/mypackages/"+formik.values.query}>
                 Go to my packages
             </Link>
+            }
+            </div>
         </div>
     );
 }
