@@ -1,6 +1,6 @@
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
-import './css/styles.css'
+import './css/styles.css';
 import Card from './components/molecules/Card';
 import Header from './components/organisms/Header';
 import HomePage from './components/templates/HomePage'
@@ -13,7 +13,7 @@ import data from './orders.json';
 
 function App() {
   return (
-    <div className="App">
+    <div className= "App">
     <Router>
         <Header />
         <Switch>

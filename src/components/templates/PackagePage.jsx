@@ -5,7 +5,7 @@ export default function PackagePage({match, data}) {
     const id = match.params.id;
 
     const result = data.filter((item) => {
-        if(item.id == id){
+        if(item.parcel_id == id){
             return item;
         }
     });

@@ -1,15 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-export default function Header () {
+export default function Header() {
     return (
-        <div className = "header">
-            <Link className = "home-link" to = "/">
-            <button className = "home-button">
-                Home
-            </button>
+        <nav className="header">
+            <div className = "left">
+            <Link to="/">
+                <button className = "head-button">
+                    Home
+                </button>
             </Link>
-            <p className = "right">Post Tracker</p>
-        </div>
+            </div>
+            <div className = "right">
+                Post Tracker
+            </div>
+        </nav>
     )
 }

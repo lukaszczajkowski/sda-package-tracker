@@ -1,4 +1,27 @@
-.my-packages {
+.my-packages{
+    background-color: #747474;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.filter-message {
+    text-align: center;
+}
+
+.my-packages .button-section {
     display: flex;
+    align-content: center;
+    flex-direction: row;
+    justify-content: center;
     flex-wrap: wrap;
+    gap: 3px;
+}
+
+.display-cards {
+    margin-left: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: center;
 }

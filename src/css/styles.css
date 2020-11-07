@@ -1,6 +1,8 @@
-@import './molecules/card.css';
+@import './_base/layout.css';
 @import './organisms/header.css';
-@import './App.css';
-@import './templates/homepage.css';
-@import './templates/nameform.css';
-@import './atoms/option-buttons.css';
+@import './atoms/buttons.css';
+@import './templates/home-page.css';
+@import './templates/name-form.css';
+@import './templates/mypackages.css';
+@import './molecules/cards.css';
+@import './templates/package-page.css'

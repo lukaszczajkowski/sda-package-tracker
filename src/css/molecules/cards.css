@@ -1,0 +1,16 @@
+.card {
+    align-self: center ;
+    width: 180px;
+    height: auto;
+    border: solid 2px black;
+    box-shadow: 2px 2px black;
+    border-radius: 8px;
+    padding: 10px;
+    margin-top: 5px;
+    color: white;
+    font-size: 16px;
+}
+
+.data {
+    font-size: 20px;
+}
