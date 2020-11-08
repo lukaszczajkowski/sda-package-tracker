@@ -64,3 +64,7 @@ If you chose to track your package by ID, the following screen will appear:
 
 In this case, there are no results matching to the id, however you will see
 the package with the given id if the match is found in the database.
+
+### Components diagram
+
+![Components Diagram](src/readme-img/ComponentsDiagram.png)
