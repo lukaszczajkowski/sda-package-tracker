@@ -16,6 +16,13 @@ You will also see any lint errors in the console.
 
 ## Tutorial
 
+### Important note
+
+The app is using the data from the src/orders.json file.
+DO NOT DELETE THE FILE. 
+If you want to test the application with another json file, make sure to replace the orders.json
+with a new orders.json file with the same data format.
+
 ### Home Page
 After opening the app, the following screen appears:
 
