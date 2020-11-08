@@ -1,12 +1,15 @@
-// import React, { useState } from 'react';
+import { useRecoilState } from 'recoil';
 import { Link } from 'react-router-dom';
 import { useFormik } from 'formik';
+
+//Global language state
+import { languageState } from '../../state/language'
 
 export default function PackageIdForm() {
     function validate(values) {
         let errors = {};
         if (!values.id) {
-          errors.id = 'Field required';
+          errors.id = outputsArray[1];
         } 
         return errors;
      
@@ -22,11 +25,16 @@ export default function PackageIdForm() {
         
     });
 
+    const [language] = useRecoilState(languageState);
+
+    const outputsArray = setOutputArray(language);
+
     return (
+        
         <div className="name-form">
             <div className = "input">
             <input onChange = {formik.handleChange}
-            placeholder = '123456'
+            placeholder = {outputsArray[0]}
             name = "id"
             type = "text"
             value = {formik.values.id}
@@ -39,7 +47,7 @@ export default function PackageIdForm() {
                 </div>
                  : null}
             {formik.values.id === ''?
-             <button className = "buttons">Track the package</button>
+             <button className = "buttons">{outputsArray[2]}</button>
              :
             <Link className = "buttons" to = {"/package/" + formik.values.id}>
                  Track the package
@@ -47,5 +55,24 @@ export default function PackageIdForm() {
             } 
         </div>
     );
+}
+
+function setOutputArray(language){
+    let outputsArray = [];
+    switch (language){
+        case "en":
+            outputsArray[0] = "12345678";
+            outputsArray[1] = "Field required!";
+            outputsArray[2] = "Track the package";
+            break;
+        case "pl":
+            outputsArray[0] = "12345678";
+            outputsArray[1] = "Pole wymagane!";
+            outputsArray[2] = "Sledz paczke";
+            break;
+        default:
+            break;
+    }
+    return outputsArray;
 }
 
