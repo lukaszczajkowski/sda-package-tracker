@@ -1,5 +1,10 @@
+//React core
 import React from 'react';
 
+/**
+ * Card component - represents every package and displays 
+ * its details and state based on the data props
+*/
 export default function Card({ data }) {
 
     const {
@@ -20,6 +25,12 @@ export default function Card({ data }) {
         last_updated
     } = data;
 
+    /**
+     * Takes in an dateArray and returns a string with date
+     * in a readable format
+     * @param {array} array with date
+     * @returns {string} date
+     */
     function transformDate(array) {
         const day = JSON.stringify(array[0]);
         const hour = JSON.stringify(array[1]);
@@ -29,6 +40,8 @@ export default function Card({ data }) {
 
         return dayTrimmed + ' at ' + hourTrimmed;
     }
+
+    //Takes the date from the JSON file and splits it to an array
     const dateArray = JSON.stringify(eta).split('T');
     const date = transformDate(dateArray);
 
@@ -38,6 +51,10 @@ export default function Card({ data }) {
         <article className="card">
             <span>Package id: </span>
             <span className="data">{parcel_id}</span>
+            <br />
+            <hr />
+            <span>Status: </span>
+            <span className="data">{status}</span>
             <br />
             <hr />
             <span>User name: </span>
@@ -74,6 +91,11 @@ export default function Card({ data }) {
             <span>Notes: </span>
             <br/>
             <span className="data">{notes}</span>
+            <br/>
+            <hr/>
+            <span>Last updated: </span>
+            <br/>
+            <span className="data">{lastUpdated}</span>
         </article>
     );
 }
